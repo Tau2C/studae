@@ -1,1 +1,0 @@
-/data/data/com.termux.nix/files/home/Projects/studae/usos_proxy/target/debug/usos_proxy: /data/data/com.termux.nix/files/home/Projects/studae/usos_lib/src/lib.rs /data/data/com.termux.nix/files/home/Projects/studae/usos_proxy/src/main.rs
