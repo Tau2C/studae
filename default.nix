@@ -10,7 +10,6 @@ pkgs.mkShell {
   ANDROID_SDK_ROOT = "/home/tau2c/Android/Sdk";
   packages = with pkgs; [
     flutter
-    android-studio
     android-tools
     pkg-config
     
@@ -23,10 +22,11 @@ pkgs.mkShell {
     nixfmt-rfc-style
 
     sqlite-web
-    bruno
     
     nodejs
-  ];
+  ]
+  ++ (if pkgs.stdenv.isx86_64 then [android-studio bruno] else [])
+  ++ (if pkgs.stdenv.isAarch64 then [] else []);
   
   shellHook = ''
     export LD_LIBRARY_PATH=build/linux/x64/debug/bundle/lib:$LD_LIBRARY_PATH
